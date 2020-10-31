@@ -23,6 +23,7 @@ frameworkVersion: '2'
 provider:
   name: aws
   runtime: nodejs12.x
+  region: eu-west-1
 
 
 plugins:
@@ -32,7 +33,7 @@ plugins:
 custom:
   ## Serverless-finch configuration
   client:
-    bucketName: shop-second-app-rs
+    bucketName: shop-app-rs
     distributionFolder: build
   ## Serverless-single-page-app-plugin configuration:
   s3LocalPath: ${self:custom.client.distributionFolder}/
