@@ -7,3 +7,5 @@ const API_PATHS = {
 };
 
 export default API_PATHS;
+
+export const ERROR_STATUSES = [400, 401, 403];

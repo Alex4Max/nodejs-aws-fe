@@ -5,16 +5,17 @@ import App from 'components/App/App';
 import {store} from 'store/store';
 import {Provider} from 'react-redux';
 import * as serviceWorker from './serviceWorker';
-import CssBaseline from "@material-ui/core/CssBaseline";
+import CssBaseline from '@material-ui/core/CssBaseline';
 import axios from 'axios';
+import { ERROR_STATUSES } from './constants/apiPaths';
 
 axios.interceptors.response.use(
   response => {
     return response;
   },
   function(error) {
-    if (error.response.status === 400) {
-      alert(error.response.data?.data);
+    if (ERROR_STATUSES.includes(error.response.status)) {
+      alert(error.response.data?.message);
     }
     return Promise.reject(error.response);
   }
